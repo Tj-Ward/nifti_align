@@ -3,7 +3,7 @@
 
 Easily align 3d nifti volumes to a template using afni tools with one line. The only benefit to using this script is lazyness, so that you can align one or more files with a single line and not have any extreneous outputs. Works for All image types. Default expects a T1w skull stripped (SS) brain and uses an ACPC SS'd brain as the target (see below or code for details). You can easily replace it for any other template such as a non-SS'd brain, a "native" space head for longitudinal alignment, PET and T2/FLAIR types too, just use the NMI flag. Additional files such as masks can be transformed at the same time. At least one image should be selected for reslicing. 
 
-Can be used as a robust coregistration tool for rigid-body alignments using a non-rigid fitting sequence.
+Can be used as a coregistration tool for rigid-body alignments using a non-rigid fitting sequence.
 
 Requires working AFNI tools installation.
 
