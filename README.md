@@ -1,6 +1,8 @@
 # nifti_align
 Easily align 3d nifti volumes to a template using afni tools with one line. The only benefit to using this script is lazyness, so that you can align one or more files with a single line and not have any extreneous outputs. Works for All image types. Default expects a T1w skull stripped (SS) brain and uses an ACPC SS'd brain as the target (see below or code for details). You can easily replace it for any other template such as a non-SS'd brain, a "native" space head for longitudinal alignment, PET and T2/FLAIR types too, just use the NMI flag. Additional files such as masks can be transformed at the same time. At least one image should be selected for reslicing. 
 
+Requires working AFNI tools installation.
+
    ***********************
    *** Nifty Align Tool **
    ***********************
@@ -15,7 +17,7 @@ Easily align 3d nifti volumes to a template using afni tools with one line. The 
    Nonlinear warping to find the alignment, then it estimates a rigid-body transformation to fit
     
    All credit goes to the AFNI team, this is just a dumb script to automate a few things.
-   -tjw (07-2021)
+   -tjw
      
       options:
       -h, --help                    Show brief help
