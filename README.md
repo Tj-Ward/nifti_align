@@ -22,10 +22,6 @@ Requires working AFNI tools installation.
       options:
       -h, --help                    Show brief help
       -i, --input       <path>      Input T1 (brainmask)
-         *--skullstrip*             *Don't use* Skull strip flag (optional)
-                                      Does not work well and adds too much time.
-                                      Use template with skull instead
-                                      Example: spmdefault_1mm_MNI_avg152T1.nii
           --template    <path>      Template to align to (optional)
                                       Default template is skullstripped TT_N27_brainmask.nii
                                       Either SS your input or use SS'd vol
