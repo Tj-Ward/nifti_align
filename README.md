@@ -5,7 +5,7 @@ Easily align 3d nifti volumes to a template using afni tools with one line. The 
 
 Can be used as a coregistration tool for rigid-body alignments using a non-rigid best fit.
 
-Requires working AFNI tools installation. Created on UCB Neurocluster.
+Requires working AFNI tools installation. 
 
    ***********************
    *** Nifty Align Tool **
