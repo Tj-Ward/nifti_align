@@ -26,10 +26,11 @@ Requires working AFNI tools installation.
       options:
       -h, --help                    Show brief help
       -i, --input       <path>      Input T1 (brainmask)
+          --skullstrip              Skull strip flag (optional)
           --template    <path>      Template to align to (optional)
                                       Default template is skullstripped TT_N27_brainmask.nii
                                       Either SS your input or use SS'd vol
-                                      SS alignment is more accurate/reliable.
+                                      SS alignment is much more accurate/reliable.
       -n, --nearest     <path>      Reslice img with NN
       -l, --linear      <path>      Reslice img with trilinear
           --keepmat                 Keep the afni transformation matrix
