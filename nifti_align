@@ -252,9 +252,9 @@ do
 	fi
 	if [[ "$img" == *\/* ]] 
 	then
-		3dAllineate -1Dmatrix_apply ${inbasename}.Xat.rigid.1D -master __tmp_c__$infullname -final NN  -prefix __tmpa__$rbasename -overwrite $rdirname/__tmp_c__$rfullname
+		3dAllineate -1Dmatrix_apply ${inbasename}.Xat.rigid.1D -master __tmp_c__${inbasename}.nii -final NN  -prefix __tmpa__${rbasename} -overwrite $rdirname/__tmp_c__${rbasename}.nii
 	else
-		3dAllineate -1Dmatrix_apply ${inbasename}.Xat.rigid.1D -master __tmp_c__$infullname -final NN  -prefix __tmpa__$rbasename -overwrite __tmp_c__$rfullname
+		3dAllineate -1Dmatrix_apply ${inbasename}.Xat.rigid.1D -master __tmp_c__${rbasename}.nii -final NN  -prefix __tmpa__${rbasename} -overwrite __tmp_c__${rbasename}.nii
 	fi
 	3dAFNItoNIFTI __tmpa__${rbasename}+orig 
 	mv __tmpa__${rbasename}.nii $APREFIX${rbasename}.nii
@@ -283,9 +283,9 @@ do
         fi
 	if [[ "$img" == *\/* ]]
 	then
-	        3dAllineate -1Dmatrix_apply ${inbasename}.Xat.rigid.1D -master __tmp_c__$infullname -final linear  -prefix __tmpa__$rbasename -overwrite $rdirname/__tmp_c__$rfullname
+	        3dAllineate -1Dmatrix_apply ${inbasename}.Xat.rigid.1D -master __tmp_c__${rbasename}.nii -final linear  -prefix __tmpa__${rbasename} -overwrite $rdirname/__tmp_c__${rbasename}.nii
 	else    
-		3dAllineate -1Dmatrix_apply ${inbasename}.Xat.rigid.1D -master __tmp_c__$infullname -final linear  -prefix __tmpa__$rbasename -overwrite __tmp_c__$rfullname
+		3dAllineate -1Dmatrix_apply ${inbasename}.Xat.rigid.1D -master __tmp_c__${rbasename}.nii -final linear  -prefix __tmpa__$rbasename -overwrite __tmp_c__${rbasename}.nii
 	fi
         3dAFNItoNIFTI __tmpa__${rbasename}+orig
         mv __tmpa__${rbasename}.nii $APREFIX${rbasename}.nii
@@ -325,15 +325,15 @@ do
 	if [ "$rextension" == "$rbasename" ]; then
 		rextension=""
 	fi
-	echo "$rdirname/__tmp_c__$rfullname"
+	echo "$rdirname/__tmp_c__${rbasename}.nii"
 	if [[ "$img" == *\/* ]]
 	then
-		if [[ -f $rdirname/__tmp_c__$rfullname ]]; then
-			rm $rdirname/__tmp_c__$rfullname
+		if [[ -f $rdirname/__tmp_c__${rbasename}.nii ]]; then
+			rm $rdirname/__tmp_c__${rbasename}.nii
 		fi
 	else
-		if [[ -f __tmp_c__$rfullname ]]; then
-	        	rm __tmp_c__$rfullname
+		if [[ -f __tmp_c__${rbasename}.nii ]]; then
+	        	rm __tmp_c__${rbasename}.nii
 		fi
 	fi
 done
@@ -351,7 +351,7 @@ if compgen -G "${inbasename}*_shft.1D" > /dev/null; then
 	ls ${inbasename}*_shft.1D*
         rm ${inbasename}*_shft.1D*
 fi
-if compgen -G "__tmp_c__" > /dev/null; then
+if compgen -G "__tmp_c__*" > /dev/null; then
 	ls __tmp_c__*
 	rm __tmp_c__*
 fi
