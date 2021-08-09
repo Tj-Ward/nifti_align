@@ -24,9 +24,15 @@ Requires working AFNI tools installation. Created on UCB Neurocluster.
    -tjw
      
       options:
-      -h, --help                    Show brief help
-      -i, --input       <path>      Input T1 (brainmask)
+      -h, --help                    Show this menu
+      -i, --input       <path>      Input (brainmask / nu / anything)
           --skullstrip              Skull strip flag (optional)
+                                      Used to skull strip the input volume for good fit to template. 
+                                      Does not save the SS'd volume. 
+                                      Use when input dataset includes skull and template does not
+                                      Default template is SS'd
+                                      Not recommended to use a template with neck and jaw.
+                                      Using FS aparc+aseg works okay when template is also aparc+aseg. 
           --template    <path>      Template to align to (optional)
                                       Default template is skullstripped TT_N27_brainmask.nii
                                       Either SS your input or use SS'd vol
