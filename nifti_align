@@ -291,7 +291,7 @@ do
         echo "=========================DELETE========================="
 	sleep 1
         ls __tmpa__${rbasename}*
-        rm __tmp__${imgbasename}*
+        rm __tmpa__${imgbasename}*
         echo "=======================END DELETE======================="
         echo ""
 done
@@ -348,6 +348,10 @@ fi
 if compgen -G "${inbasename}*_shft.1D" > /dev/null; then
 	ls ${inbasename}*_shft.1D*
         rm ${inbasename}*_shft.1D*
+fi
+if compgen -G "__tmp_c__" > /dev/null; then
+	ls __tmp_c__*
+	rm __tmp_c__*
 fi
 echo "========================================================"
 
