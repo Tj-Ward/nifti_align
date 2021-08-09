@@ -69,6 +69,18 @@ Requires working AFNI tools installation.
 
 Finished. The next time you log into your shell, nifti_align will be an avaliabe command for you to use. 
 
+# Alternate Use: 
+
+1. Download the file "nifti_align" or copy its contents.  
+2. Change permissions to allow executing the file.
+    
+    > chmod +x ~/.local/bin/nifti_align
+
+3. Run application by calling it in the terminal
+    
+    > ./nifti_align <flags>
+
+
 # Example commands
 1. > **nifti_align -i nu.nii -l nu.nii -n aparc+aseg.nii --keepmat --skullstrip**
 
