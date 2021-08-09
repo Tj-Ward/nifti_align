@@ -60,7 +60,8 @@ What exactly does it do?
 ### Before:
 ![Before](before.png)   
 ### Code: 
-    $ nifti_align -i nu.nii -l nu.nii -n aparc+aseg.nii --keepmat --skullstrip
+    Use nu.nii for transformation and reslice nu.nii. Skullstrip to fit to template (does not keep SS'd output). 
+    $ nifti_align -i nu.nii -l nu.nii --skullstrip
 ### After:
 ![After](after.png)   
 
