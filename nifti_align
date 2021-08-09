@@ -211,11 +211,9 @@ do
 	echo "$rdirname/__tmp_c__$rfullname"
 	if [[ "$img" == *\/* ]]
 	then
-		#mri_convert --out_orientation LAS --in_center 0 0 0 $img $rdirname/__tmp_c__$rfullname
-		mri_convert --out_orientation LAS --in_center 0 0 0 $img $rdirname/__tmp_c__$rfullname
+		mri_convert --out_orientation LAS --in_center 0 0 0 $img $rdirname/__tmp_c__${rbasename}.nii
 	else
-		#mri_convert --out_orientation LAS --in_center 0 0 0 $img __tmp_c__$rfullname
-		mri_convert --out_orientation LAS --in_center 0 0 0 $img __tmp_c__$rfullname
+		mri_convert --out_orientation LAS --in_center 0 0 0 $img __tmp_c__${rbasename}.nii
 	fi
 done
 sleep 1
@@ -225,10 +223,14 @@ ls -lt |grep "tmp_c"
 echo "+++++++++++++++++++++++LS1+++++++++++++++++++++++"
 
 if [ "$AFNI_ALIGN_SS" = true ] ; then
-	@auto_tlrc -rigid_equiv -base $AFNI_ALIGN_TEMPLATE -init_xform AUTO_CENTER -pad_input 25 -dxyz 1 -no_pre -overwrite -prefix __tmp__$inbasename -input __tmp_c__$infullname
+	@auto_tlrc -rigid_equiv -base $AFNI_ALIGN_TEMPLATE -init_xform AUTO_CENTER -pad_input 25 -dxyz 1 -no_pre -overwrite -prefix __tmp__$inbasename -input __tmp_c__${inbasename}.nii
 else
-	#@auto_tlrc -rigid_equiv -base $AFNI_ALIGN_TEMPLATE -init_xform CENTER_CM -no_pre -no_ss -overwrite -pad_input 25 -3dAlcost $AFNI_ALIGN_COST -prefix __tmp__$inbasename -input __tmp_c__$infullname
-	@auto_tlrc -rigid_equiv -base $AFNI_ALIGN_TEMPLATE -no_ss -init_xform AUTO_CENTER -pad_input 25 -dxyz 1 -no_pre -overwrite -prefix __tmp__$inbasename -input __tmp_c__$infullname
+	@auto_tlrc -rigid_equiv -base $AFNI_ALIGN_TEMPLATE -no_ss -init_xform AUTO_CENTER -pad_input 25 -dxyz 1 -no_pre -overwrite -prefix __tmp__$inbasename -input __tmp_c__${inbasename}.nii
+fi
+
+if [[ ! -f __tmp__${inbasename}.Xat.rigid.1D ]] ; then
+    echo 'Missing transformation matrix. Error with @auto_tlrc.'
+    exit
 fi
 
 mv __tmp__${inbasename}.Xat.rigid.1D ${inbasename}.Xat.rigid.1D
