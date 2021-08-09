@@ -47,3 +47,45 @@ Requires working AFNI tools installation. Created on UCB Neurocluster.
     $ nifti_align -i nu.nii -l nu.nii -n aparc+aseg.nii --keepmat --skullstrip
 ### After:
 ![After](after.png)   
+
+# Recomended Install: 
+
+1. Download the file "nifti_align" or copy its contents.  
+2. Create the folder '~/.local/bin'  
+3. Move nifti_align file into '~/.local/bin'  
+4. Edit '~/.bashrc' and add the following to the bottom:  
+
+    > export PATH="$HOME/.local/bin:$PATH"
+
+5. Change permissions to allow executing the file.
+    
+    > chmod +x ~/.local/bin/nifti_align
+
+Finished. The next time you log into your shell, nifti_align will be an avaliabe command for you to use. 
+
+# Example commands
+1. > **nifti_align -i nu.nii -l nu.nii -n aparc+aseg.nii --keepmat --skullstrip**
+
+    > '-i nu.nii' Use nu.nii to find the transformation.  
+    > '-l nu.nii' reslice nu.nii using linear interp  
+    > '-n aparc+aseg.nii' reslice aparc+aseg.nii using linear interp  
+    > '--keepmat' keep the transformation matrix  
+    > '--skullstrip' Skullstrip nu.nii before warping. Required if using T1 with skull.  
+    
+    **Output:**  
+    1. a_nu.nii
+    2. a_aparc+aseg.nii
+    3. nu.Xat.rigid.1D - transformation matrix
+    
+2. > **nifti_align -i brainmask.nii -l nu.nii -l registered_PET.nii -n aparc+aseg.nii --prefix aligned_**
+
+    > '-i brainmask.nii' Use brainmask.nii to find the transformation.  
+    > '-l nu.nii' reslice nu with linear interp  
+    > '-l registered_PET.nii' reslice a PET image that has already been registered to the T1.  
+    > '-n aparc+aseg.nii' reslice aparc+aseg.nii mask using linear interp  
+    > '--prefix aligned_' Rather than the default "a_" prefix, use "aligned_"  
+    
+    **Output:**
+    1. aligned_nu.nii
+    2. aligned_registered_PET.nii
+    3. aligned_aparc+aseg.nii
