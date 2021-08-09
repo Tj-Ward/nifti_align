@@ -105,7 +105,7 @@ Finished. The next time you log into your shell, nifti_align will be an avaliabe
     2. a_aparc+aseg.nii
     3. nu.Xat.rigid.1D - transformation matrix
     
-2. > **nifti_align -i brainmask.nii -l nu.nii -l registered_PET.nii -n aparc+aseg.nii --prefix aligned_**
+2. > **nifti_align -i brainmask.nii -l nu.nii -l registered_PET.nii -n aparc+aseg.nii -n mask2.nii -n mask3.nii --prefix aligned_**
 
     > '-i brainmask.nii' Use brainmask.nii to find the transformation.  
     > '-l nu.nii' reslice nu with linear interp  
@@ -117,3 +117,5 @@ Finished. The next time you log into your shell, nifti_align will be an avaliabe
     1. aligned_nu.nii
     2. aligned_registered_PET.nii
     3. aligned_aparc+aseg.nii
+    4. aligned_mask2.nii
+    5. aligned_mask3.nii
