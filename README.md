@@ -39,3 +39,11 @@ Requires working AFNI tools installation.
                                       Good for PET alignment
                                     AFNI offers many good cost functions, just edit the
                                       script if you want to use a different one
+                                      
+## Examples:
+### Before:
+![Before](before.png)   
+### Code: 
+    $ nifti_align -i nu.nii -l nu.nii -n aparc+aseg.nii --keepmat --skullstrip
+### After:
+![After](after.png)   
