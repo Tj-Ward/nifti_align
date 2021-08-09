@@ -107,7 +107,7 @@ while test $# -gt 0; do
       ;;
     --prefix*)
       shift
-      export PREFIX=(`echo $1 | sed -e 's/^[^=]*=//g'`)
+      export APREFIX=(`echo $1 | sed -e 's/^[^=]*=//g'`)
       shift
       ;;
     --nmi)
@@ -168,7 +168,7 @@ done
 
 
 echo "Keep matrix: $KEEP_TRANS"
-echo "Prefix: $PREFIX"
+echo "Prefix: $APREFIX"
 echo "Cost funct: $AFNI_ALIGN_COST"
 
 # get some info about the input file. I'm going to copy it to a tmp img so that I can modify its header info without consequence.
