@@ -64,7 +64,7 @@ What exactly does it do?
 ### After:
 ![After](after.png)   
 
-# Recomended Install: 
+# Recomended Install (Linux / Neurocluster): 
 
 1. Download the file "nifti_align" or copy its contents.  
 2. Create the folder '~/.local/bin'  
