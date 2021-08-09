@@ -16,6 +16,7 @@ What exactly does it do?
 * Convert that matrix to rigid-only parameters that best fit the warp
 * Use the matrix to reslice as many images as you input
 
+
    ***********************
    *** Nifty Align Tool **
    ***********************
