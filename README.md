@@ -1,4 +1,7 @@
-# nifti_align
+# nifti_align  
+
+*Intendend only for use at UCB HWNI Neurocluster.* 
+
 *All credit goes to the AFNI team, this is just a dumb script to automate a few things.*
 *My shell scripting is not the greatest but it should be pretty simple to read, modify, or use as-is.*
 
