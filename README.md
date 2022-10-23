@@ -1,9 +1,6 @@
 # nifti_align  
 
-*Intendend only for use on UCB HWNI Neurocluster.* 
-
-*All credit goes to the AFNI team, this is just a dumb script to automate a few things.*
-*My shell scripting is not the greatest but it should be pretty simple to read, modify, or use as-is.*
+*Credit goes to the AFNI team, this is a wrapper to simplify alignment of nifti-images*
 
 Easily align 3d nifti volumes to a template using afni tools with one line. The only benefit to using this script is lazyness, so that you can align one or more files with a single line and not have any extreneous outputs. Works for nifty and mgz image types. Outputs nifti. Default template expects a T1 and uses an ACPC SS'd brain as the target (see below or code for details). You can easily replace it for any other template such as a non-SS'd brain, a "native" space head for longitudinal alignment, PET and T2/FLAIR types too, just use the NMI flag for aligning different modalities. Additional files such as masks can be transformed at the same time using either linear or nearest resampling. At least one image should be selected for reslicing. 
 
