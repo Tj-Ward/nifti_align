@@ -10,7 +10,6 @@ Requires working AFNI tools installation.
 
 What exactly does it do?
 * Reset origin to center of image
-* Reset orientation to LAS
 * Find a spatial transformation to tlrc space
 * Convert that matrix to rigid-only parameters that best fit the warp
 * Use the matrix to reslice as many images as you input
