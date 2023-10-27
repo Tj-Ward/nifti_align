@@ -28,9 +28,9 @@ What exactly does it do?
    A better approach would be re-writing @auto_tlrc which is itself a wraper of AFNI tools
    This is better than using 3dwarpdrive or other registration tools I have found because it uses
    Nonlinear warping to find the alignment, then it estimates a rigid-body transformation to fit
-    
-   All credit goes to the AFNI team, this is just a dumb script to automate a few things.
-   -tjw
+
+## All credit goes to the AFNI team, this is just a dumb script to automate a few things.  
+
      
       options:
       -h, --help                    Show this menu
