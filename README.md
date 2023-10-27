@@ -64,32 +64,6 @@ What exactly does it do?
 ### After:
 ![After](after.png)   
 
-# Recomended Install (Linux / Neurocluster): 
-
-1. Download the file "nifti_align" or copy its contents.  
-2. Create the folder '~/.local/bin'  
-3. Move nifti_align file into '~/.local/bin'  
-4. Edit '~/.bashrc' and add the following to the bottom:  
-
-    > export PATH="$HOME/.local/bin:$PATH"
-
-5. Change permissions to allow executing the file.
-    
-    > chmod +x ~/.local/bin/nifti_align
-
-Finished. The next time you log into your shell, nifti_align will be an avaliabe command for you to use. 
-
-# Alternate Use: 
-
-1. Download the file "nifti_align" or copy its contents.  
-2. Change permissions to allow executing the file.
-    
-    > chmod +x /\<install path\>/nifti_align
-
-3. Run application by calling it in the terminal
-    
-    > ./nifti_align \<flags\>
-
 
 # Example commands
 1. > **nifti_align -i nu.nii -l nu.nii -n aparc+aseg.nii --keepmat --skullstrip**
