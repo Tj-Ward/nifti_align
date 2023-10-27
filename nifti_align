@@ -211,9 +211,9 @@ do
 	echo "$rdirname/__tmp_c__$rfullname"
 	if [[ "$img" == *\/* ]]
 	then
-		mri_convert --out_orientation LAS --in_center 0 0 0 $img $rdirname/__tmp_c__${rbasename}.nii
+		mri_convert --in_center 0 0 0 $img $rdirname/__tmp_c__${rbasename}.nii
 	else
-		mri_convert --out_orientation LAS --in_center 0 0 0 $img __tmp_c__${rbasename}.nii
+		mri_convert --in_center 0 0 0 $img __tmp_c__${rbasename}.nii
 	fi
 done
 sleep 1
